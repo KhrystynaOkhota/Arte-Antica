@@ -1,0 +1,223 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.seo-component {
+
+  @media (min-width: $breakpoint-md) {
+    padding: 48px 0 100px 0;
+  }
+  @media (max-width: $breakpoint-md) {
+    padding: 30px 0 60px 0;
+  }
+
+  .heading {
+    margin-bottom: 65px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 50px;
+    }
+  }
+
+
+  &__content {
+    position: relative;
+    color: $primaryColor;
+    @media (min-width: $breakpoint-md) {
+      padding-right: 4%;
+    }
+    @media (max-width: $breakpoint-md) {
+      padding-right: 10px;
+    }
+
+    & ul, & ol {
+      margin-bottom: 25px;
+      margin-left: 25px;
+
+      & li {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.25;
+        color: $primaryColor;
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 12px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+
+        }
+      }
+    }
+
+    & ul {
+      & li {
+        &:before {
+          content: "";
+
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background: $primaryColor;
+        }
+      }
+    }
+
+    & ol {
+      & li {
+        counter-increment: list;
+
+        &:before {
+          content: counter(list) ".";
+          width: 12px;
+          color: $primaryColor;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    & p, & a {
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    & a {
+      display: inline-block;
+      color: $accentColor;
+      position: relative;
+      @include transition(.4);
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: $accentColor;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        @include transition(.4);
+      }
+
+      &:hover {
+        &:after {
+          content: '';
+          width: 0;
+          @include transition(.4);
+        }
+      }
+    }
+
+    p, h1, h2, h3, h4, h5, h6 {
+      color: $primaryColor;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.read-more {
+
+
+  &.big-preview {
+    max-height: 240px;
+
+    & .prompt {
+      padding-top: 140px;
+    }
+
+  }
+
+  & .prompt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-top: 60px;
+    padding-bottom: 9px;
+
+    /* Fade to white */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+
+
+  }
+}
+
+.btn-show-more {
+  width: 40px;
+  height: 40px;
+  margin: 50px auto 0 auto;
+
+  &:after {
+    //content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-top: 60px;
+    padding-bottom: 9px;
+
+    /* Fade to white */
+    // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+    background: linear-gradient(0deg, #FFFFFF 49.75%, rgba(255, 255, 255, 0) 104.73%);
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    // opacity: .6;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+.read-more-button {
+
+}
+
+
+.read-more {
+  overflow: hidden;
+  height: 251px;
+
+  &__btn {
+    cursor: pointer;
+    margin: 50px auto 0 auto;
+    width: 40px;
+    height: 40px;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: contain;
+      object-fit: contain;
+      opacity: .6;
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    &-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, .9) 70%, rgba(255, 255, 255, 0.9) 100%);
+    }
+  }
+}

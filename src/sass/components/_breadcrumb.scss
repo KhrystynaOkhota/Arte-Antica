@@ -1,0 +1,97 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.kama_breadcrumbs {
+
+  &__wrap {
+
+  }
+
+  @media (min-width: $breakpoint-md) {
+    //display: flex;
+  }
+
+  font-weight: 300;
+  line-height: 1.6;
+
+
+  background-color: transparent;
+  padding: 33px 0;
+
+  font-size: 17px;
+  color: #916F5E;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: block;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  overflow: auto;
+  & a {
+    position: relative;
+    &:after {
+      content: '';
+      background-color: #8FC04F;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 1px;
+      z-index: 1;
+      transition: width ease-out .3s;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  & span {
+
+  }
+
+  & .kb {
+    &_sep {
+      color: #AFAFAF;
+      margin: 0 6px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 3px;
+      }
+    }
+
+    &_title {
+      color: #AFAFAF;
+    }
+  }
+}
+
+.woocommerce-breadcrumb {
+  width: 100%;
+  max-width: 1340px !important;
+  margin: auto !important;
+  padding: 10px 15px !important;
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: 20px !important;
+  }
+
+  & a, & {
+    font-weight: 300;
+    font-size: 14px !important;
+    line-height: 18px;
+    color: #4E4E4E !important;
+    position: relative;
+    font-family: 'Mulish', sans-serif;
+  }
+}

@@ -1,0 +1,138 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.btn {
+  position: relative;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'TTNorms', sans-serif;
+
+  padding: 13px 64px 15px 64px;
+  border-radius: 90px;
+  font-size: 18px;
+  line-height: 1;
+  border: none;
+  @include transition(.4);
+
+  &:focus {
+    outline: none;
+  }
+
+  &-primary {
+
+    color: $whiteColor;
+    background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+    border: none;
+
+
+    min-width: 210px;
+
+
+    @include transition(.3);
+    @media (max-width: $breakpoint-lg) {
+
+    }
+
+    &:hover {
+      color: $primaryColor;
+      border-color: #C9DAFF;
+    }
+  }
+
+  &-transparent {
+    color: rgba(241, 196, 134, 1);
+    background-color: transparent;
+    border: 1px solid rgba(241, 196, 134, 1);
+  }
+
+  &-white {
+    color: rgba(187, 152, 128, 1);
+    background-color: rgba(255, 255, 255, 1);
+    min-width: 120px;
+    @media (max-width: $breakpoint-md) {
+
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+
+  &-more {
+    letter-spacing: 1px;
+    color: rgba(241, 196, 134, 1);
+    margin-top: 15px;
+    display: inline-flex;
+    margin-right: 14px;
+
+    &:after {
+      content: '';
+      width: 61px;
+      height: 2px;
+      background: rgba(241, 196, 134, 1);
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      @include transition(.5);
+    }
+
+    &:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5.5px 0 5.5px 6px;
+      border-color: transparent transparent transparent rgba(241, 196, 134, 1);
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 8px);
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &-download {
+    padding: 30px;
+    background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+    @include fontSize(22, 30);
+    display: inline-flex;
+    margin: 20px 20px 20px 0;
+    color: $whiteColor;
+    @media (max-width: $breakpoint-md) {
+      padding: 30px 20px;
+      letter-spacing: 1.5px;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    & i {
+      padding-right: 15px;
+    }
+
+    &:not(&.no-line) {
+      &:after {
+        content: '';
+        width: 90%;
+        height: calc(100% + 40px);
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        border: 1px solid #916F5E;
+        z-index: -1;
+        @media (max-width: $breakpoint-md) {
+          display: none;
+        }
+      }
+    }
+
+  }
+}
+

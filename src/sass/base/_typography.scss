@@ -1,0 +1,119 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-light {
+    font-weight: 300;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semibold {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-m {
+
+    font-size: 17px;
+    line-height: 1.28;
+    color: $whiteColor;
+  }
+
+  &-l {
+    font-size: 20px;
+    line-height: 1.25;
+    color: $primaryColor;;
+  }
+
+  &-xl {
+    @include fontSize(35, 50);
+    line-height: 1.25;
+  }
+}
+
+.heading {
+  background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  &-font {
+    font-family: 'Lighthaus', serif;
+    letter-spacing: 2.5px;
+  }
+}
+
+
+.icon-arrow-left:before {
+  content: "\e909";
+}
+
+.icon-arrow-right:before {
+  content: "\e90a";
+}
+
+.icon-ar-left:before {
+  content: "\e907";
+}
+
+.icon-ar-right:before {
+  content: "\e908";
+}
+
+.icon-file:before {
+  content: "\e906";
+}
+
+.icon-facebook:before {
+  content: "\e900";
+}
+
+.icon-instagram:before {
+  content: "\e901";
+}
+
+.icon-telegram:before {
+  content: "\e902";
+}
+
+.icon-viber:before {
+  content: "\e903";
+}
+
+.icon-whatsapp:before {
+  content: "\e904";
+}
+
+.icon-youtube:before {
+  content: "\e905";
+}
+

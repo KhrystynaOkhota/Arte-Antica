@@ -1,0 +1,40 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.social {
+  &__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  &__item {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(121deg, #ECCAA1 14.76%, #A1896E 83.34%);;
+    border-radius: 100%;
+    cursor: pointer;
+    &:not(&:last-child) {
+      margin-right: 20px;
+    }
+
+    & i {
+      color: $whiteColor;
+      @include fontSize(16, 20);
+      @include transition(.4);
+    }
+
+    & a {
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+      & i {
+        color: #373737;
+      }
+    }
+  }
+}
+

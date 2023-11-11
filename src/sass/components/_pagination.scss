@@ -1,0 +1,100 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.pagination {
+  width: 100%;
+
+  background-color: transparent;
+
+  &-container {
+    padding: 140px 0;
+    @media (max-width: $breakpoint-lg) {
+      padding: 50px 0 100px 0;
+    }
+  }
+
+  & .screen-reader-text {
+    display: none;
+  }
+
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+
+  & .nav-links {
+    position: relative;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .page-numbers {
+      position: relative;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: left;
+      color: $primaryColor;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      @include transition(.4);
+      padding-bottom: 3px;
+      @media (max-width: $breakpoint-sm) {
+        width: 25px;
+        height: 25px;
+      }
+
+      &:after {
+        content: '';
+        height: 3px;
+        background-color: $accentColor;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include transition(.4);
+      }
+
+      & i {
+        font-size: 14px;
+
+      }
+
+      &:not(&.prev,&.next) {
+        margin: 0 5px;
+      }
+
+      &.next, &.prev {
+
+      }
+
+      &.current, &:hover {
+        color: $accentColor;
+
+        &:after {
+          width: 27px;
+          @media (max-width: $breakpoint-sm) {
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
