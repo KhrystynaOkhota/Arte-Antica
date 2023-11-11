@@ -34,10 +34,17 @@
     color: $accentColor;
     @include fontSize(160, 300);
     line-height: 1;
-
+    background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     &-info {
       color: $accentColor;
       @include fontSize(50, 100);
+      background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       @media (max-width: $breakpoint-md) {
         margin-bottom: 77px;
       }
@@ -93,6 +100,10 @@
     @include fontSize(60, 150);
     margin-bottom: 70px;
     color: #373737;
+    background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 35px;
     }

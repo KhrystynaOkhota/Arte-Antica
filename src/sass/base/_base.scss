@@ -38,7 +38,7 @@ html:not(.touch-screen)::-webkit-scrollbar-track, html:not(.touch-screen) *::-we
 }
 
 html:not(.touch-screen)::-webkit-scrollbar-thumb, html:not(.touch-screen) *::-webkit-scrollbar-thumb {
-  background-color: $accentColor !important;
+  background-color: #f1c486 !important;
 }
 
 .lg-actions .lg-next, .lg-actions .lg-prev {
@@ -223,15 +223,30 @@ body {
 
       @include transition(.4);
       border-color: rgba(180, 165, 151, 0.4);
+      overflow: hidden;
+      position: relative;
 
       & i {
-
         @include fontSize(6, 8);
         font-weight: 300;
         color: rgba(180, 165, 151, 0.4);
         @include transition(.5);
+        position: relative;
+        z-index: 3;
       }
 
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        @include transition(.5);
+      }
 
       &:after {
         display: none;
@@ -239,8 +254,9 @@ body {
 
       &:hover {
         border-color: #916F5E;
-        background: linear-gradient(114deg, #A1896E 16.09%, #ECCAA1 52.75%, #A1896E 81.41%);
-
+        &:before{
+          opacity: 1;
+        }
         & i {
           color: $whiteColor;
         }
